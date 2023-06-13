@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/3.1.3/socket.io.min.js"></script>
+    <title>Welcome Back to your HOWS!!!</title>
+    <link rel="stylesheet" href="static/common.css">
+    <link rel="stylesheet" href="static/lisu.css">
+    <script src="static/js/common.js"></script>
+    <script src="static/js/login.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+</head>
+<body class="lisu_body">
+    <div class="body_lisu_div flex">
+        <div class="logo_box_top justifyContentCenter flex">
+            <div class="logo_text flex">
+                <div class="logo logo_lisu shine">WithYou</div>
+                <div class="slog_ shine">#OceanOfHearts</div>
+            </div>
+        </div>
+        <div class="lisu_div">
+            <div class="wcText justifyContentCenter flex">
+                <div class="input_box flex">
+                    <form class="flex input_material" action="/signupForm" method="post" id="signupForm" enctype="multipart/form-data">
+                        <div class="name_lisu flex each_col com_lisu">
+                            <div class="svg_lisu">
+                                <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" class="icon"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                            </div>
+                            <input type="text" placeholder="Full name" class="input_lisu" name="su_name" id="su_name">
+                        </div>
+                        <div class="username_lisu flex each_col com_lisu">
+                            <div class="svg_lisu">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon errorSvg"><circle cx="12" cy="12" r="4"></circle><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"></path></svg>
+                            </div>
+                            <input type="text" placeholder="username" class="input_lisu" name="su_username" id="su_username">
+                        </div>
+                        <div class="email_lisu flex each_col com_lisu">
+                            <div class="svg_lisu">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon errorSvg"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                            </div>
+                            <input type="email" placeholder="Email address" class="input_lisu" name="su_email" id="su_email">
+                        </div>
+                        <div class="password_lisu flex each_col com_lisu">
+                            <div class="svg_lisu">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"></path></svg>
+                            </div>
+                            <input type="password" placeholder="Password" class="input_lisu" name="su_password" id="su_password">
+                        </div>
+                        <div class="photo_lisu flex each_col">
+                            <img src="static/profile_img/_1.png" onclick="selectedPhoto(this)" class="optionSuImg link optionMargin"></img>
+                            <img src="static/profile_img/_2.png" onclick="selectedPhoto(this)" class="optionSuImg link optionMargin"></img>
+                            <img src="static/profile_img/_3.png" onclick="selectedPhoto(this)" class="optionSuImg link optionMargin"></img>
+                            <input type="file" name="su_img" id="su_img" accept="image/*" hidden/>
+                            <div class="link addImg flex alignItemsCenter justifyContentCenter optionSuImg" onclick="openDialog()">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon innerAddImgSvg"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                            </div>
+                        </div>
+                        <div class="errorDiv each_col">
+                            <div class="errorDivMessage"></div>
+                        </div>
+                        <div class="term_lisu each_col">By signing up, you agree to our <a href="">Terms</a> , <a href="">Privacy Policy</a> and <a href="">Cookies Policy</a> .</div>
+                        <div id="signup_btn" class="button_com_lisu each_col link flex justifyContentCenter">Sign up</div>
+                    </form>
+                    <div class="flex last_line_lisu justifyContentCenter">
+                        <div class="forgot_link fontSize12">Already in this era?</div>
+                        <a href="/" class="forgot_link fontSize12 text_ll_lisu link">Log in</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<!-- 
+    Required:
+        Logo
+        Link
+ -->

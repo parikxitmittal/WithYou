@@ -1,0 +1,135 @@
+* {
+    font-size: 14px;
+    font-family: 'PT Sans', sans-serif;
+}
+.shine {
+    text-shadow: 0px 0px 16px rgb(220,220,220);
+}
+.lisu_body {
+    min-height: 500px;
+    max-width: 1176px;
+    margin: auto;
+    background: #f5f5f5;
+}
+.logo_box_top {
+    flex: 1;
+    align-items: center;
+}
+.logo_text {
+    flex-direction: column;
+}
+.logo_lisu {
+    font-size: 42px;
+    font-family: 'Mulish', sans-serif;
+    color: #002855;
+}
+.slog_ {
+    font-size: 37px;
+    font-family: 'Dancing Script', cursive;
+    margin: 0px 21px;
+    color: #30dfc4;
+    position: relative;
+    top: -32px;
+}
+.body_lisu_div {
+    height: 100vh;
+    min-height: 550px;
+    flex-direction: row;
+}
+.lisu_div {
+    flex: 1;
+}
+.wcText {
+    height: 100%;
+    align-items: center;
+}
+.input_box {
+    flex-direction: column;
+}
+.input_material {
+    flex-direction: column;
+}
+.each_col {
+    width: 290px;
+    margin-bottom: 12px;
+}
+.input_lisu {
+    padding: 9px;
+    background: transparent;
+
+    flex-grow: 1;
+}
+.button_com_lisu {
+    background: rgb(0, 40, 85);
+    color: #f5f5f5;
+    border-radius: 4px;
+    margin-top: 12px;
+    padding: 9px;
+}
+.forgot_link {
+    margin-bottom: 16px;
+    margin-left: 12px;
+}
+.com_lisu {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: 1px solid #30dfc4;
+}
+.svg_lisu {
+    padding: 0px 9px;
+    height: fit-content;
+}
+.last_line_lisu {
+    flex-direction: row;
+}
+.text_ll_lisu {
+    color: #30dfc4;
+    margin-left: 6px;
+}
+.term_lisu {
+    font-size: 12px;
+    color: rgb(100,100,100);
+    text-align: center;
+}
+.term_lisu a {
+    font-size: 12px;
+    color: #30dfc4;
+}
+.photo_lisu {
+    margin-top: 12px;
+}
+.addImg {
+    background: #151515cc;
+}
+.innerAddImgSvg {
+    width: 21px;
+    height: 21px;
+    stroke: #fff;
+}
+.optionMargin {
+    margin-right: 2.5px;
+}
+.optionSuImg {
+    width: 70px;
+    height: 70px;
+    border-radius: 9px;
+}
+.selectedImg {
+    border: 4px solid #002855;
+}
+@media only screen and (max-width: 856px) {
+    .body_lisu_div {
+        flex-direction: column;
+    }
+    .logo_box_top {
+        flex: none;
+        min-height: 250px;
+    }
+    .lisu_div {
+        flex: none;
+        padding: 29px 0;
+    }
+}

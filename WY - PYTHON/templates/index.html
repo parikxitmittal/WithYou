@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="static/common.css">
+    <link rel="stylesheet" href="static/style.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/3.1.3/socket.io.min.js"></script>
+    <script src="static/js/script.js"></script>
+    <script src="static/js/common.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+    <title>Unkown With You</title>
+</head>
+<body class="flex">
+        <div class="leftBar flex">
+            <div class="slidScroll">
+                <div class="slidScrollHeight flex">
+                    <div class="ProfileInfo delay flex">
+                        <img id="userProfileIdImg" class="ProfileImage delay">
+                        <div class="ProfileNameUID delay">
+                            <div class="ProfileName poppinsFont delay">{{ name }}</div>
+                            <div class="ProfileUID fontSize12 link poppinsFont delay flex" onclick="copy()">
+                                <div class="alignItemsCenter flex">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon link iconCopy"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                                </div>
+                                <div id="copyText">{{ username }}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slideDiv delay flexGrow1 flex">
+                        <button type="button" class="slideOption link justifyContentCenter alignItemsCenter flex">
+                            <span class="spanButtonOfSlideIcon borderRadius50 flex">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon link slideIcon"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                            </span>
+                            <div class="slideOptionText fontSize12 flexGrow1 alignItemsCenter ubuntuFont delay flex">Messages</div>
+                        </button>
+                        <button type="button" class="slideOption link justifyContentCenter alignItemsCenter flex">
+                            <span class="spanButtonOfSlideIcon borderRadius50 flex">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon link slideIcon"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+                            </span>
+                            <div class="slideOptionText fontSize12 flexGrow1 alignItemsCenter delay flex">About us</div>
+                        </button>
+                        <button type="button" class="slideOption link justifyContentCenter alignItemsCenter flex" onclick="logout()">
+                            <span class="spanButtonOfSlideIcon borderRadius50 flex">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon link slideIcon"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                            </span>
+                            
+                            <div class="slideOptionText fontSize12 flexGrow1 alignItemsCenter delay flex">Log out</div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div class="chatInfoHolder flex" id="createdOnId">
+        <div class="innerDivOfChattingOptions flex">
+            <div class="chattingOptions flex">
+                <div class="searchAndLogo flex alignItemsCenter">
+                    <div class="WithYou ubuntuFont flexGrow1">WithYou</div>
+                    <div class="searchAndModeButton flex">
+                        <button class="SAMB_Property margin012 borderRadius50 flex alignItemsCenter link searchButton" onclick="addUserDiv()">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon iconOnMode link"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                        </button>
+                        <button class="SAMB_Property margin012 borderRadius50 flex alignItemsCenter link modeSvg" onclick="modeShift()"></button>
+                    </div>
+                </div>
+                <div class="otherUserSection flex flexGrow1">
+                    <div class="noMessage flex alignItemsCenter fontSize12 poppinsFont colorSwift0 justifyContentCenter">Press (+) above to add a user for chat</div>
+                    <div class="chatHolderInSec1 overflowY_Auto" id="individualChatSectionInnerPart"></div>
+                </div>
+            </div>
+        </div>
+        <div class="individualChatSection flex flexGrow1 alignItemsCenter justifyContentCenter">
+            <div class="photoHolderOfMessage">
+                <div class="WithYouOnDisplay ubuntuFont colorSwift0">WithYou</div>
+                <div class="textOneOnDisplay ubuntuFont fontSize12">Send and receive messages instantly & secularly.</div>
+                <div class="textOneOnDisplay ubuntuFont fontSize12">A project by <a target="_blank" href="https://instagram.com/parikxit.mittal/">Parikxit Mittal</a>.</div>
+            </div>
+            <div class="innerIndividualChatSection flex" style="display: none;">
+                <div class="dataOfChatOpenedDiv DOCOD DOCOD_1">
+                    <div class="chatInputOnPage flex">
+                        <div class="inputDiv flex flexGrow1">
+                            <div class="otherUserInfoInChatSection flex alignItemsCenter flexGrow1">
+                                <img src="" class="imgOfOtherUserInChatSection">
+                                <div class="nameOfOtherUserInChatSection poppinsFont"></div>
+                            </div>
+                            <div class="crossForOtherUser flex alignItemsCenter">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon iconOnMode link"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="chatOnPageSection flex flexGrow1"></div>
+                <div class="dataOfChatOpenedDiv DOCOD DOCOD_2">
+                    <div class="chatInputOnPage flex">
+                        <div class="inputDiv flexGrow1">
+                            <input class="poppinsFont inputOfMessage" type="text" name="inputMessage" id="inputMessage" placeholder="Type a message" onkeydown="checkEnterButton()">
+                        </div>
+                        <button class="inputButton flex alignItemsCenter" onclick="dropMessage()">
+                            <div class="sendButton flex alignItemsCenter">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon iconOnMode link"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bigDiv logoutBigDiv flex alignItemsCenter justifyContentCenter">
+        <div class="centroidDiv flex">
+            <div class="textInLogoutDiv poppinsFont flexGrow1">Are you sure you want to log-out?</div>
+            <div class="buttonOfLogutComformationDiv flex">
+                <button class="innerLogoutDivButtons poppinsFont link skipLogout colorSwift0" onclick="logoutCancel()">No</button>
+                <a class="innerLogoutDivButtons poppinsFont link comformLogout" href="/logout">Sure, log-out</a>
+            </div>
+        </div>
+    </div>
+    <div class="bigDiv addUserDiv flex alignItemsCenter justifyContentCenter">
+        <div class="centroidDiv padding21 flex">
+            <div class="centroidTopTextHolder flex">
+                <div class="textInLogoutDiv flex flexGrow1">
+                    <div class="flex justifyContentCenter alignItemsCenter">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="errorSvg icon"><circle cx="12" cy="12" r="4"></circle><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"></path></svg>
+                    </div>
+                    <input type="text" id="userIdOfOtherPerson" class="inputOfMessage poppinsFont flexGrow1 margin012" onkeydown="checkEnterButtonForUserId()" placeholder="Enter the username." maxlength="12">
+                </div>
+                <button class="notToAddUser borderRadius50 flex link skipLogout colorSwift0 margin012" onclick="searchTheUser()">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon iconOnMode link"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                </button>
+                <button class="notToAddUser borderRadius50 flex link skipLogout colorSwift0 margin012" onclick="addUserIDCancel()">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon iconOnMode link"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+            </div>
+            <div class="errorDiv">
+                <div class="errorDivMessage margin012 poppinsFont"></div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        let img = '{{ img }}';
+        let userProfileIdImg = document.getElementById("userProfileIdImg");
+        userProfileIdImg.src = "static/profile_img/" + img;
+        modeOn();
+    </script>
+</body>
+</html>

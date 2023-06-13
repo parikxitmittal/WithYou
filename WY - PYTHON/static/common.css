@@ -1,0 +1,91 @@
+* {
+    transition: all 0.1s;
+    outline: none;
+    margin: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+.fontSize12 {
+    font-size: 12px;
+}
+:root {
+    --whiteSmoke: #f5f5f5;
+    --white: #ffffffcc;
+    --WYColor: #002855;
+    --borderColor: rgb(0,0,0,0.1);
+    --icon: #002855;
+    --lightSmoke: #f0f2f5;
+    --black: #000;
+}
+.borderRadius50 {
+    border-radius: 50%;
+}
+.margin012 {
+    margin: 0px 12px !important;
+}
+.rotate {
+    transform: rotate(360deg);
+}
+.icon {
+    width: 15px;
+    height: 15px;
+    stroke-width: 2;
+    fill: none;
+    stroke: #002855;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+.iconOnMode {
+    stroke: var(--icon);
+}
+.ubuntuFont {
+    font-family: 'Ubuntu', sans-serif;
+}
+.poppinsFont {
+    font-family: 'Poppins', sans-serif;
+}
+.link {
+    cursor: pointer;
+}
+button {
+    background: transparent;
+    border: none;
+}
+.flex {
+    display: flex;
+}
+.alignItemsCenter {
+    align-items: center;
+}
+.justifyContentCenter {
+    justify-content: center;
+}
+.flexGrow1 {
+    flex-grow: 1;
+}
+input {
+    border: none;
+}
+.uppercase {
+    text-transform: uppercase;
+}
+.overflowY_Auto {
+    overflow-y: auto;
+}
+.maxheight0 {
+    max-height: 0%;
+}
+.maxheight100 {
+    max-height: 100%;
+}
+.errorDiv {
+    margin: 0px !important;
+    max-height: 0px;
+    overflow: hidden;
+}
+.errorDivMessage {
+    margin: 6px 6px 12px 6px;
+    color: rgb(250,0,0);
+    text-align: center;
+    font-size: 12px;
+}

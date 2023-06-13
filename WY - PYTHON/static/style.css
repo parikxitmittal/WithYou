@@ -1,0 +1,412 @@
+/* padding: 1px;
+border: 1.3px solid rgb(65,23,235);
+border-radius: 50%; */
+.WithYou {
+    font-size: 20px;
+    color: var(--WYColor);
+    padding: 27px 18px 27px 21px;
+    user-select: none;
+    letter-spacing: 0.3px;
+}
+::-webkit-scrollbar {
+    background: #f5f5f5;
+    width: 1px;
+}
+::-webkit-scrollbar-thumb {
+    background: #f5f5f5;
+    scroll-behavior: smooth;
+}
+body {
+    height: 100vh;
+    flex-direction: row;
+}
+.colorSwift0 {
+    color: var(--black);
+}
+.chatInfoHolder {
+    width: -webkit-fill-available;
+    flex-direction: row;
+}
+.leftBar {
+    background: #24292e;
+    flex-direction: column;
+    padding: 2px 2px 2px 0px;
+    width: 72px;
+    transition: all 0.23s linear;
+    /* box-shadow: inset 25px 0px 25px -16px rgba(0,0,0,0.45), inset -25px 0px 25px -25px rgba(0,0,0,0.45); */
+}
+.slidScrollHeight {
+    min-height: 516px;
+    height: auto;
+    flex-direction: column;
+    padding: 15px 12px;
+}
+.slidScroll {
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.slidScroll::-webkit-scrollbar-thumb {
+    background: #24292e;
+}
+.leftBar:hover {
+    transition: all 0.23s linear 0.64s;
+    width: 298px;
+}
+.leftBar:hover .Profile_info {
+    height: 105px;
+    flex-direction: row;
+    align-items: center;
+}
+.leftBar:hover .ProfileImage {
+    height: 64px;
+    width: 64px;
+}
+.leftBar:hover .ProfileNameUID {
+    transition: all 0.23s linear 1s;
+    height: 64px;
+    padding: 0 17px;
+    max-width: 177px;
+    width: 143px;
+}
+.leftBar:hover .ProfileName {
+    animation: NmaE_FeD 0.4s forwards 1.28s;
+}
+.leftBar:hover .ProfileUID {
+    animation: NmaE_FeD 0.4s forwards 1.92s;
+}
+.leftBar:hover .slideOptionText {
+    transition: height 0.23s linear 0.84s, width 0.23s linear 0.84s;
+    max-height: 31px;
+    height: 31px;
+    padding-left: 22px;
+    max-width: 241px;
+    /* Update value after completion */
+    animation: NmaE_FeD 0.4s forwards 1s;
+    text-align: left;
+}
+.leftBar:hover .delay {
+    transition: all 0.23s linear 0.84s;
+}
+/* .ProfileInfo {
+    height: 45px;
+} */
+.ProfileImage {
+    border-radius: 6px;
+    height: 45px;
+    width: 45px;
+}
+.ProfileNameUID {
+    height: 0px;
+    width: 0px;
+}
+.ProfileName {
+    color: whitesmoke;
+    opacity: 0;
+    margin-bottom: 4px;
+}
+.ProfileUID {
+    color: rgb(105, 148, 190);
+    opacity: 0;
+    flex-direction: row;
+}
+.iconCopy {
+    stroke: #f5f5f5;
+    margin-right: 6px;
+    width: 12px;
+    height: 12px;
+}
+.slideDiv {
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-top: 16px;
+    border-radius: 10px;
+}
+.spanButtonOfSlideIcon {
+    background: #2f363d;
+    padding: 8px;
+}
+.slideIcon {
+    stroke: #f5f5f5;
+}
+.slideOption {
+    padding: 14px 6px;
+    border-radius: 5px;
+    color: #fff;
+}
+.slideOptionText {
+    color: #f5f5f5;
+    max-height: 0px;
+    max-width: 0px;
+    opacity: 0;
+    letter-spacing: 0.2px;
+}
+.chattingOptions {
+    overflow-y: scroll;
+    width: -webkit-fill-available;
+    flex-direction: column;
+    border-right: 1px solid var(--borderColor);
+    background: var(--white);
+}
+.innerDivOfChattingOptions {
+    width: 36.5%;
+    min-width: 470px;
+    overflow: auto;
+    flex-direction: row;
+}
+.searchAndLogo {
+    width: 100%;
+    padding: 0px 12px;
+    min-height: 78px;
+    flex-direction: row;
+}
+.otherUserSection {
+    flex-direction: column;
+}
+.individualChatSection {
+    background: var(--whiteSmoke);
+    flex-direction: column;
+    width: 63.5%;
+}
+.perChatHolderDiv {
+    flex-direction: row;
+    cursor: pointer;
+    margin: 10px;
+    background: #f5f5f5;
+    padding: 8px 10px;
+    border-radius: 10px;
+}
+.perChatHolderDiv:hover {
+    background: rgb(220,220,240);
+}
+.imgOfOtherUser {
+    width: 50px;
+    height: 50px;
+}
+.dataOfOtherUser {
+    width: 100%;
+}
+.nameAndChatOfOtherUser {
+    padding: 18px 0px 18px 18px;
+    flex-direction: column;
+    align-items: start;
+}
+.nameAndSeenOfOtherUser {
+    flex-direction: row;
+}
+.nameOfOtherUser {
+    font-weight: 500;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.lastChatOfOtherUser {
+    font-weight: 300;
+    color: #667781;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 310px;
+    font-size: 14px;
+    overflow: hidden;
+}
+.timeSeenOfOtherUser {
+    font-size: 11px;
+    font-weight: 300;
+}
+.chatHolderInSec1 {
+    flex-direction: column-reverse;
+}
+.unseenMessageInSec1 {
+    background: rgb(220, 240, 240);
+}
+.bigDiv {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(10,10,10,0.42);
+    backdrop-filter: blur(12px);
+    z-index: 1;
+    display: none;
+    opacity: 0;
+}
+.centroidDiv {
+    background: #f5f5f5;
+    width: 500px;
+    max-width: 80%;
+    padding: 32px 21px 12px 21px;
+    border-radius: 12px;
+    flex-direction: column;
+    position: relative;
+}
+.buttonOfLogutComformationDiv {
+    justify-content: end;
+    margin-top: 24px;
+}
+.innerLogoutDivButtons {
+    padding: 12px 24px;
+    border-radius: 6px;
+}
+.skipLogout {
+    background: var(--lightSmoke);
+    border: 1px solid rgb(220,220,220);
+}
+.skipLogout:hover {
+    border: 1px solid rgb(180,180,180);
+}
+.comformLogout {
+    margin-left: 12px;
+    background: #E7625F;
+    border: 1px solid #C85250;
+    color: #fff;
+}
+.comformLogout:hover {
+    border: 1px solid #AA1945;
+}
+.SAMB_Property {
+    min-width: 39px;
+    padding: 12px;
+    border-radius: 50%;
+    background: var(--lightSmoke);
+}
+.searchAndModeButton {
+    flex-direction: row;
+}
+.dataOfChatOpenedDiv {
+    position: fixed;
+    transition: width 0s, top 0.4s ease, bottom 0.4s ease;
+}
+.DOCOD_1 {
+    top: -100%;
+    background: linear-gradient(180deg, var(--whiteSmoke) 20%, transparent);
+}
+.DOCOD_2 {
+    bottom: -100%;
+    background: linear-gradient(0deg, var(--whiteSmoke) 20%, transparent);
+}
+.chatInputOnPage {
+    flex-direction: row;
+    border: 1px solid var(--borderColor);
+    margin: 8px;
+    border-radius: 10px;
+    background: var(--white);
+    backdrop-filter: blur(32px);
+}
+.inputDiv {
+    padding: 14px 14px 14px 28px;
+    color: var(--WYColor);
+}
+.inputOfMessage {
+    background: transparent;
+    width: 100%;
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--WYColor);
+}
+.inputButton {
+    padding: 14px 28px 14px 14px;
+}
+.sendButton {
+    transform: rotate(45deg);
+}
+.innerIndividualChatSection {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    opacity: 0;
+}
+.noMessage {
+    display: none;
+    height: 100%;
+}
+.chatOnPageSection {
+    overflow-y: scroll;
+    transition: all 0.1s;
+    flex-direction: column-reverse;
+    padding: 68px 8px;
+}
+.sender {
+    justify-content: right;
+}
+.receiver {
+    justify-content: left;
+}
+.messageDiv {
+    max-width: 60%;
+    padding: 8px 12px;
+    font-size: 14px;
+    border-radius: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+.sendingMessage {
+    background: #405DE6;
+    color: #fff;
+}
+.receivingMessage {
+    background: #2f363d;
+    color: #ffffff;
+}
+.columnOfMessage {
+    margin-top: 2px;
+    max-height: 0%;
+    transition: all 1s;
+}
+.selectedChat {
+    background: rgb(220,220,240);
+}
+.centroidTopTextHolder {
+    flex-direction: row;
+}
+.notToAddUser {
+    padding: 12px;
+}
+.padding21 {
+    padding: 21px;
+}
+.deleted {
+    max-height: 0;
+    margin: 0;
+}
+.columnOfMessage:hover .deleteBox {
+    opacity: 1;
+}
+.deleteBox {
+    opacity: 0;
+    margin: 0px 24px 0px 0px;
+}
+.deleteSVG {
+    transition: all 0.05s;
+    width: 12px;
+    height: 12px;
+}
+.deleteSVG:hover {
+    stroke: rgba(255,0,0,0.7);
+}
+#userIdOfOtherPerson {
+    color: #000;
+}
+.ProfileUID:active #copyText {
+    color: #f5f5f5;
+}
+.textOneOnDisplay a {
+    color: var(--black);
+}
+.WithYouOnDisplay {
+    font-size: 50px;
+    opacity: 0.6;
+    margin-bottom: 16px;
+    text-align: center;
+}
+.textOneOnDisplay {
+    text-align: center;
+    color: var(--black);
+    opacity: 0.64;
+    margin-bottom: 8px;
+}
+@keyframes NmaE_FeD {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
