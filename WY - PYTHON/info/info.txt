@@ -1,0 +1,10 @@
+- REQUIRED LIBRARY:
+	flask
+	flask_socketio
+	mysql.connector
+
+- ONE DATA OF USER SHOULD BE COMPULSORY
+
+- TABLES ARE:
+	chat
+	users
