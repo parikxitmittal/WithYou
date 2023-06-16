@@ -243,10 +243,11 @@ def dropMessage(details):
     db.commit()
     user0, user1 = int(session['user_id']), int(otherUserId)
     cursor.execute('SELECT chat_with FROM users WHERE user_id IN ("' + session['user_id'] + '", ' + otherUserId + ') ORDER BY user_id DESC')
+    keys = cursor.fetchall()
     if user0 > user1:
-        key_for_user0, key_for_user1 = json.loads(cursor.fetchall()[0][0]), json.loads(cursor.fetchall()[1][0])
+        key_for_user0, key_for_user1 = json.loads(keys[0][0]), json.loads(keys[1][0])
     else:
-        key_for_user0, key_for_user1 = json.loads(cursor.fetchall()[1][0]), json.loads(cursor.fetchall()[0][0])
+        key_for_user0, key_for_user1 = json.loads(keys[1][0]), json.loads(keys[0][0])
     if len(key_for_user0) == 0:
         countForUser0 = 0
     else:
