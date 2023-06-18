@@ -1,9 +1,22 @@
-function showError(message) {
+function showError(message, number=null) {
     let errorDiv = document.querySelector(".errorDiv");
-    let errorSvg = document.querySelectorAll(".errorSvg");
-    errorDiv.style.maxHeight = "50px";
-    for (let i = 0; i < errorSvg.length; i++) {
-        errorSvg[i].style.stroke = "rgb(255,0,0)";
+    if (number == null) {
+        let errorSvg = document.querySelectorAll(".errorSvg");
+        for (let i = 0; i < errorSvg.length; i++) {
+            errorSvg[i].style.stroke = "rgb(255,0,0)";
+        }
     }
+    else {
+        let errorSvg = document.querySelectorAll(".errorSvg");
+        for (let i = 0; i < errorSvg.length; i++) {
+            if (i == number) {
+                errorSvg[i].style.stroke = "rgb(255,0,0)";
+            }
+            else {
+                errorSvg[i].style.stroke = "#002855";
+            }
+        }
+    }
+    errorDiv.style.maxHeight = "50px";
     errorDiv.querySelector(".errorDivMessage").innerHTML = message;
 }
