@@ -145,7 +145,6 @@ socket.on('dataForUser', function(info) {
 });
 
 socket.on('searchResult', function(result) {
-
     if (result == "0") {
         showError("No result found.")
     }
