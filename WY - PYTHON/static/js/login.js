@@ -9,11 +9,14 @@ function loggedInButtonFunction() {
         xhr.onload = function() {
             if (xhr.status === 200) {
                 let data = xhr.responseText;
-                if (data == "1") {
+                if (data == "2") {
                     window.location.replace("http://127.0.0.1:5000/");
                 }
+                else if (data == "0") {
+                    showError("Email address doesn't exist. Please re-check it.", 0);
+                }
                 else {
-                    showError("Email address or passsword is incorrect. Please re-check them.");
+                    showError("Your password is incorrect. Please re-check it.", 1);
                 }
             }
             else {
