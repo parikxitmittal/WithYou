@@ -147,7 +147,6 @@ socket.on('dataForUser', function(info) {
 socket.on('searchResult', function(result) {
 
     if (result == "0") {
-        // console.log("User doesnt exist");
         showError("No result found.")
     }
     else if (result == "1") {
