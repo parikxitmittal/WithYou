@@ -139,15 +139,18 @@ def loginCheck():
     loginData = sessionCheck.checkInfo()
 
     if loginData == False:
-        cursor.execute("SELECT COUNT(*), user_id, username FROM users WHERE email_id = '" + email + "' AND password = '" + password + "'")
+        cursor.execute("SELECT COUNT(*), user_id, username, password FROM users WHERE email_id = '" + email + "'")
         result = cursor.fetchone()
         if result[0] == 1:
-            userIdLen = 11 - len(str(result[1]))
-            userId = "0"*userIdLen + str(result[1])
-            session['user_id'] = userId
-            session['user_name'] = str(result[2])
-            session['password'] = password
-            return "1"
+            if result[3] == password:
+                userIdLen = 11 - len(str(result[1]))
+                userId = "0"*userIdLen + str(result[1])
+                session['user_id'] = userId
+                session['user_name'] = str(result[2])
+                session['password'] = password
+                return "2"
+            else:
+                return "1"
         else:
             return "0"
     else:
